@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lato:wght@300;400;700&family=Ramabhadra&family=Tenali+Ramakrishna&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 50% 98%;
+    --foreground: 25 50% 12%;
+    --card: 40 33% 97%;
+    --card-foreground: 25 50% 12%;
+    --popover: 40 50% 98%;
+    --popover-foreground: 25 50% 12%;
+    --primary: 24 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 15 100% 19%;
+    --secondary-foreground: 30 100% 88%;
+    --accent: 43 72% 52%;
+    --accent-foreground: 25 100% 9%;
+    --muted: 30 20% 92%;
+    --muted-foreground: 16 20% 43%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 33 30% 85%;
+    --input: 33 30% 85%;
+    --ring: 24 100% 45%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+  [data-debug-wrapper="true"] { display: contents !important; }
+}
+
+.font-telugu-heading { font-family: 'Ramabhadra', serif; }
+.font-telugu-body { font-family: 'Tenali Ramakrishna', sans-serif; }
+.font-english-heading { font-family: 'Cinzel', serif; }
+.font-english-body { font-family: 'Lato', sans-serif; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFCF5;
+}
+
+.temple-gradient {
+  background: linear-gradient(to bottom right, #621B00, #8D2800);
+}
+
+.gold-border {
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.torn-paper {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 95% 98%, 90% 100%, 85% 98%, 80% 100%, 75% 98%, 70% 100%, 65% 98%, 60% 100%, 55% 98%, 50% 100%, 45% 98%, 40% 100%, 35% 98%, 30% 100%, 25% 98%, 20% 100%, 15% 98%, 10% 100%, 5% 98%, 0% 100%);
+}
+
+.seva-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.seva-card:hover {
+  border-color: #D4AF37;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.ticket-border {
+  border: 3px double #D4AF37;
+  position: relative;
+}
+.ticket-border::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  pointer-events: none;
+}
